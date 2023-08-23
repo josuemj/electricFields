@@ -33,13 +33,17 @@ def lineal(largo, distancia, carga):
     r= distancia**2 + largo**2
 
     Ex= (1 / (4 * np.pi * epsilon)) * (lam/r) * cos * integral
-    print("El campo electrico es:", Ex)
+    print("El campo electrico en x es:", Ex)
+
+
+    Ey= -(1 / (4 * np.pi * epsilon)) * (lam/r) * sen * integral
+    print("El campo electrico en Y es:", Ey)
 
     return Ex
 
 def disco(distancia, radio, carga):
     def f(r):
-        return r/((distancia**2 + r**2)**3/2)
+        return r/(((distancia**2) + (r**2))**3/2)
     
     integral, error= integrate.quad(f, 0, radio)
 
@@ -50,4 +54,4 @@ def disco(distancia, radio, carga):
     print("El campo electrico es:", E)
     return
 
-E = lineal(4, 3, 2)
+E = lineal(4, 2, 2)
