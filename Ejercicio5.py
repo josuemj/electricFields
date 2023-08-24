@@ -2,9 +2,10 @@ from scipy import integrate
 import numpy as np 
 
 epsilon = 8.85e-12
+carga= 1.00e-6
 
 
-def anillo(distancia, radio, carga):
+def anillo(distancia, radio):
 
     cos= distancia/pow((distancia**2 + radio**2), 1/2)
 
@@ -19,31 +20,26 @@ def anillo(distancia, radio, carga):
 
     return E
 
-def lineal(largo, distancia, carga):
+def lineal(largo, distancia):
     r= distancia**2 + largo**2
-    cos = distancia/(r**1/2)
-    sen = largo/(r**1/2)
+    cos = distancia/(r**(1/2))
 
     def f(s):
         return 1
+    
     media= largo/2
-    integral, error= integrate.quad(f, -media, media)
+    integral, error= integrate.quad(f, (-media), media)
 
     lam= carga/largo
-    r= distancia**2 + largo**2
 
-    Ex= (1 / (4 * np.pi * epsilon)) * (lam/r) * cos * integral
-    print("El campo electrico en x es:", Ex)
+    E= (1 / (4 * np.pi * epsilon)) * (lam/r) * cos * integral
+    print("El campo electrico en x es:", E)
 
+    return E
 
-    Ey= -(1 / (4 * np.pi * epsilon)) * (lam/r) * sen * integral
-    print("El campo electrico en Y es:", Ey)
-
-    return Ex
-
-def disco(distancia, radio, carga):
+def disco(distancia, radio):
     def f(r):
-        return r/(((distancia**2) + (r**2))**3/2)
+        return r/(((distancia**2) + (r**2))**(3/2))
     
     integral, error= integrate.quad(f, 0, radio)
 
@@ -51,7 +47,7 @@ def disco(distancia, radio, carga):
 
     E = ((gama * distancia)/(2 * epsilon)) * integral
 
-    print("El campo electrico es:", E)
+    print("El campo electrico es:", round(E), "N/C")
     return
 
-E = lineal(4, 2, 2)
+E = lineal(4, 2)
