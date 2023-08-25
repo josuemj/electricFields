@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>632</width>
-    <height>995</height>
+    <width>621</width>
+    <height>752</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>170</y>
+      <x>80</x>
+      <y>80</y>
       <width>71</width>
       <height>16</height>
      </rect>
@@ -30,8 +30,8 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>340</y>
+      <x>230</x>
+      <y>220</y>
       <width>161</width>
       <height>41</height>
      </rect>
@@ -56,8 +56,8 @@
    <widget class="QComboBox" name="fieldsComboBox">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>160</y>
+      <x>160</x>
+      <y>70</y>
       <width>321</width>
       <height>41</height>
      </rect>
@@ -66,20 +66,13 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>260</y>
+      <x>60</x>
+      <y>150</y>
       <width>461</width>
       <height>64</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="1">
-      <widget class="QSlider" name="radioSlider">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="0">
       <widget class="QLabel" name="label_3">
        <property name="text">
@@ -87,10 +80,10 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="label_2">
-       <property name="text">
-        <string>Radio</string>
+     <item row="0" column="1">
+      <widget class="QSlider" name="radioSlider">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
        </property>
       </widget>
      </item>
@@ -101,20 +94,47 @@
        </property>
       </widget>
      </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Radio</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="radioLabel">
+       <property name="text">
+        <string>1m</string>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLabel" name="posicionLabel">
+       <property name="text">
+        <string>50m</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
    <widget class="QFrame" name="graphFrame">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>410</y>
+      <x>40</x>
+      <y>270</y>
       <width>541</width>
       <height>371</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>300</width>
+      <width>350</width>
       <height>300</height>
      </size>
     </property>
@@ -140,7 +160,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>632</width>
+     <width>621</width>
      <height>26</height>
     </rect>
    </property>
