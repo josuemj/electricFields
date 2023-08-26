@@ -16,24 +16,21 @@ def anillo(distancia, radio):
 
     E = (1 / (4 * np.pi * epsilon)) * (dq / (distancia**2 + radio**2)) * cos
 
-    print("El campo electrico es:", E)
+    print("El campo electrico es:", E, "N/C")
 
     return E
 
 def lineal(largo, distancia):
-    r= distancia**2 + largo**2
-    cos = distancia/(r**(1/2))
+    k = (1)/(4* np.pi * epsilon)
+    lambda_ = carga / largo 
 
-    def f(s):
-        return 1
+    def f(y):
+        dL = 1  
+        dQ = lambda_ * dL  
+        return k * dQ * distancia / (distancia**2 + y**2)**(3/2)
     
-    media= largo/2
-    integral, error= integrate.quad(f, (-media), media)
-
-    lam= carga/largo
-
-    E= (1 / (4 * np.pi * epsilon)) * (lam/r) * cos * integral
-    print("El campo electrico en x es:", E)
+    E, error= integrate.quad(f, -largo/2, largo/2)
+    print("El campo electrico es:", E, "N/C")
 
     return E
 
@@ -47,7 +44,5 @@ def disco(distancia, radio):
 
     E = ((gama * distancia)/(2 * epsilon)) * integral
 
-    print("El campo electrico es:", round(E), "N/C")
-    return
-
-E = lineal(4, 2)
+    print("El campo electrico es:", E, "N/C")
+    return E
