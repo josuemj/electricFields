@@ -8,6 +8,16 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from Ejercicio5 import*
 
+"""
+Universidad del valle de Guatemala
+Física III
+Problema 5 parcial I
+Josué Marroquin 22397
+Sebastian Huertas 22295 
+
+"""
+
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 ====== FUNCIONES MATEAMÁTICAS PARA GRAFICAR =========
@@ -125,6 +135,8 @@ class MyGUI(QMainWindow):
         #rectas al punto P
         ax.plot(dominioRecta, rectaNegativa(dominioRecta,r,posicion_x))
         ax.plot(dominioRecta, rectaPositiva(dominioRecta, r, posicion_x))
+        ax.arrow(posicion_x, 0, (posicion_x + (posicion_x / 3)) - posicion_x, 0,
+                 head_width=0.2, head_length=0.3, fc='blue', ec='blue')
 
         plt.scatter(posicion_x, 0, color='red', zorder=2)
         plt.text(posicion_x, 2, puntoP, fontsize=16, color='black')
@@ -159,6 +171,9 @@ class MyGUI(QMainWindow):
         ax.plot(dominioRecta, rectaNegativa(dominioRecta, r, posicion_x))
         ax.plot(dominioRecta, rectaPositiva(dominioRecta, r, posicion_x))
 
+        ax.arrow(posicion_x, 0, (posicion_x + (posicion_x / 3)) - posicion_x, 0,
+                 head_width=0.2, head_length=0.3, fc='blue', ec='blue')
+
         plt.scatter(posicion_x, 0, color='red', zorder=2)
         plt.text(posicion_x, 2, puntoP, fontsize=16, color='black')
         ax.set_title('Campo eléctrico disco')
@@ -189,7 +204,10 @@ class MyGUI(QMainWindow):
         ax.grid(True)
         ax.scatter(posicion_x, 0, color='red', zorder=2)
 
-        ax.set_title('Campo eléctro linea')
+        ax.arrow(posicion_x, 0, (posicion_x + (posicion_x / 3)) - posicion_x, 0,
+                 head_width=0.2, head_length=0.3, fc='blue', ec='blue')
+
+        ax.set_title('Campo eléctrico linea')
         canvas = FigureCanvas(fig)
         layout = self.graphFrame.layout()
         layout.addWidget(canvas)
